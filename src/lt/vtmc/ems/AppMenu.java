@@ -6,58 +6,72 @@ public class AppMenu {
     private char exit;
     private Scanner input = new Scanner(System.in);
 
-    public void mainMenu() throws Exception {
+    public void mainMenu() {
 
 	while (exit != 'n') {
-	    System.out.println("Simple Java calculator ver. 1.0");
+	    System.out.println("Simple Java calculator ver. 2.0");
 	    arithmeticCalculateMenu();
 	    exitMenu();
 	}
     }
 
-    private void arithmeticCalculateMenu() throws Exception {
+    private void arithmeticCalculateMenu() {
 
 	System.out.print("First number: ");
 
 	while (!input.hasNextInt()) {
 	    System.out.println("Input is not a number.");
-	    System.out.print("First number: ");
+	    System.out.println("First number: ");
 	    input.nextLine();
 	}
-	int x = Integer.parseInt(input.next());
+	int first = Integer.parseInt(input.next());
 
 	System.out.print("Second number: ");
 
 	while (!input.hasNextInt()) {
 	    System.out.println("Input is not a number.");
-	    System.out.print("First number: ");
+	    System.out.println("Second number: ");
 	    input.nextLine();
 	}
 
-	int y = Integer.parseInt(input.next());
+	int second = Integer.parseInt(input.next());
+
 	System.out.print("Operator: ");
-	String op = input.next();
 
-	int z = 0;
+	int result = 0;
 
-	if (op.equals("+")) {
-	    z = x + y;
-	} else if (op.equals("-")) {
-	    z = x - y;
-	} else if (op.equals("*")) {
-	    z = x / y;
-	} else if (op.equals("/")) {
-	    z = x * y;
-	} else {
-	    throw new Exception("Operator not recognized");
+	char operator = input.next().charAt(0);
+
+	switch (operator) {
+	case '+':
+	    result = first + second;
+	    break;
+
+	case '-':
+	    result = first - second;
+	    break;
+
+	case '*':
+	    result = first * second;
+	    break;
+
+	case '/':
+	    result = first / second;
+	    break;
+
+	default:
+	    System.out.printf("Operator not recognized");
+	    break;
 	}
-	System.out.println("Result: " + z);
+
+	System.out.printf("Result:" + result);
     }
 
     private void exitMenu() {
+
 	System.out.println("Continue (y/n): ");
-	String read = input.next().toLowerCase();
-	char close = read.charAt(0);
+
+	char close = input.next().toLowerCase().charAt(0);
 	switch (close) {
 	case 'y':
 	    exit = 'y';
@@ -68,8 +82,7 @@ public class AppMenu {
 	    break;
 	default:
 	    System.out.println("Wrong symbol!");
-	    exit = 'n';
-	    return;
+	    exitMenu();
 	}
     }
 }
