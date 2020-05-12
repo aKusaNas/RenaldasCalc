@@ -8,7 +8,7 @@ public class AppMenu {
 
     public void mainMenu() throws Exception {
         // TODO
-        while (exit != 'y') {
+        while (exit != 'n') {
             System.out.println("Simple Java calculator ver. 1.0");
             arithmeticCalculateMenu();
             exitMenu();
@@ -48,12 +48,15 @@ public class AppMenu {
         switch (close) {
             case 'y':
                 exit = 'y';
+                break;
             case 'n':
                 exit = 'n';
                 System.out.println("Good luck!");
+                return;
             default:
                 System.out.println("Wrong symbol!");
                 exit = 'n';
+                break;
         }
     }
 }
