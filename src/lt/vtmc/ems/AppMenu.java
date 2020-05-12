@@ -60,11 +60,11 @@ public class AppMenu {
 	    break;
 
 	default:
-	    System.out.printf("Operator not recognized");
+	    System.out.println("Operator not recognized");
 	    break;
 	}
 
-	System.out.printf("Result:" + result);
+	System.out.println("Result:" + result);
     }
 
     private void exitMenu() {
