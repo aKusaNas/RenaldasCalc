@@ -47,9 +47,9 @@ public class AppMenu {
         char close = read.charAt(0);
         switch (close) {
             case 'y':
-                exit = 'n';
-            case 'n':
                 exit = 'y';
+            case 'n':
+                exit = 'n';
                 System.out.println("Good luck!");
             default:
                 System.out.println("Wrong symbol!");
