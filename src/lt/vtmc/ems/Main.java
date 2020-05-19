@@ -6,5 +6,6 @@ public class Main {
 
 	AppMenu menu = new AppMenu();
 	menu.mainMenu();
+
     }
 }

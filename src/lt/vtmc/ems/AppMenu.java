@@ -6,6 +6,7 @@ public class AppMenu {
     private char exit;
     private Scanner input = new Scanner(System.in);
 
+
     public void mainMenu() {
 
 	while (exit != 'n') {
@@ -13,6 +14,7 @@ public class AppMenu {
 	    arithmeticCalculateMenu();
 	    exitMenu();
 	}
+
     }
 
     private void arithmeticCalculateMenu() {
@@ -69,6 +71,7 @@ public class AppMenu {
 
     private void exitMenu() {
 
+
 	System.out.println("Continue (y/n): ");
 
 	char close = input.next().toLowerCase().charAt(0);
@@ -84,5 +87,6 @@ public class AppMenu {
 	    System.out.println("Wrong symbol!");
 	    exitMenu();
 	}
+
     }
 }
