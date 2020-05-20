@@ -1,4 +1,4 @@
-package lt.vtmc.ems;
+package src.lt.vtmc.ems;
 
 public class Main {
 
